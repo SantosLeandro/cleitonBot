@@ -6,8 +6,10 @@ function escolha($frase ){
     return $arr[rand(0, count($arr) - 1)];
 }
 
+$newsUrl = $_ENV['NEWS_URL'];
+
 function noticias(){
- $newsUrl = "http://newsapi.org/v2/top-headlines?sources=globo&apiKey=c43f64c4afb6463cb4d51a1e64faf288";
+
 
 $news = file_get_contents($newsUrl);
 
