@@ -16,7 +16,7 @@ $message = $update["message"]["text"];
 $id = $update["message"]["message_id"];
 
 $sale = date('25/06/2020');
- if(rand(1, 14)==4){
+ if(rand(1, 30)==10){
 	 $name = $update["message"]["from"]["first_name"];
      $msg = array("cheguei man", $name." é massa","chance","qual a dúvida","ate no rabo","ihh rapaz",
                   "cala boca demonho","satanás caluniador","Sai daquiiii demonho",$name." chegou, façam silencio","dropou",
