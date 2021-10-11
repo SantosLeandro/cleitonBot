@@ -16,6 +16,12 @@ $message = $update["message"]["text"];
 $id = $update["message"]["message_id"];
 
 $sale = date('25/06/2020');
+
+
+if(checkCommand($message, "/entende")){
+  sendMessage($chatId, "Olá como vai entende");
+}
+
  if(rand(1, 30)==10){
 	 $name = $update["message"]["from"]["first_name"];
      $msg = array("cheguei man", $name." é massa","chance","qual a dúvida","ate no rabo","ihh rapaz",
@@ -26,6 +32,7 @@ $sale = date('25/06/2020');
 
 if(checkCommand($message, "/git")){
   sendMessage($chatId, "https://github.com/SantosLeandro/cleitonBot");
+
 }
 
 if(checkCommand($message, "/salve")){
