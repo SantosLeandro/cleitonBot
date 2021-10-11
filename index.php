@@ -17,8 +17,8 @@ $id = $update["message"]["message_id"];
 
 $sale = date('25/06/2020');
 
-if(checkCommand($message, "/debug_update")){
-  echo $update;
+if(checkCommand($message, "/git")){
+  sendMessage($chatId, "https://github.com/SantosLeandro/cleitonBot");
 }
 
 if(checkCommand($message, "/salve")){
