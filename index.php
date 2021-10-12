@@ -20,7 +20,10 @@ $sale = date('25/06/2020');
 if($update["message"]["dice"]["emoji"]!=''){
 	$emoji = $update["message"]["dice"]["emoji"];
 	$valor = $update["message"]["dice"]["value"];
-	sendMessage($chatId, "emoji ".$emoji." valor ".$valor);	
+	if(($emoji == 🏀 or $emoji == ⚽)&& $valor<4){
+		sendMessage($chatId, "vai errar fdp!");
+	}
+	//sendMessage($chatId, "emoji ".$emoji." valor ".$valor);	
 }
 
 if(checkCommand($message, "/entende")){
