@@ -18,7 +18,9 @@ $id = $update["message"]["message_id"];
 $sale = date('25/06/2020');
 
 if($update["message"]["dice"]["emoji"]!=''){
-	sendMessage($chatId, "emoji ".$message["dice"]["emoji"]." valor ".$message["value"]);	
+	$emoji = $update["message"]["dice"]["emoji"];
+	$valor = $update["message"]["dice"]["value"];
+	sendMessage($chatId, "emoji ".$emoji." valor ".$value);	
 }
 
 if(checkCommand($message, "/entende")){
