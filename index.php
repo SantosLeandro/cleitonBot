@@ -21,9 +21,13 @@ if($update["message"]["dice"]["emoji"]!=''){
 	$emoji = $update["message"]["dice"]["emoji"];
 	$valor = $update["message"]["dice"]["value"];
 	if(($emoji == 🏀 or $emoji == ⚽)&& $valor<4){
-		sendMessage($chatId, "vai errar fdp!");
+		if(rand(0,2)==1)
+		 sendMessage($chatId, "vai errar fdp!");
+		else
+		 sendMessage($chatId, "valendo o toba se errar já sabe");
+		 
 	}
-	sendMessage($chatId, "vai acertar fdp!");
+	else if(($emoji == 🏀 or $emoji == ⚽)&& $valor>=4) sendMessage($chatId, "vai acertar fdp!");
 	//sendMessage($chatId, "emoji ".$emoji." valor ".$valor);	
 }
 
