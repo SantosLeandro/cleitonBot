@@ -2,6 +2,7 @@
 
 $botToken = $_ENV['TOKEN'];
 $website = "https://api.telegram.org/bot".$botToken;
+$botname = "@cleitonFenixBot";
 
 $update = file_get_contents('php://input');
 $update = json_decode($update, TRUE);
