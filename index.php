@@ -25,13 +25,17 @@ if($update["message"]["dice"]["emoji"]!=''){
 		 sendMessage($chatId, "vai errar fdp!");
 		else{
 		 sendMessage($chatId, "valendo o toba se errar já sabe");
-			sleep(3);
-		 sendMessage($chatId, "ihh rapaz");
+			sleep(4);
+		 sendMessage($chatId, "ih rapaz parece que vc danço");
 		 
 		}
 		 
 	}
-	else if(($emoji == 🏀 or $emoji == ⚽)&& $valor>=4) sendMessage($chatId, "vai acertar fdp!");
+	else if(($emoji == 🏀 or $emoji == ⚽)&& $valor>=4) { 
+		sendMessage($chatId, "eu acho q esse fdp vai acertar!");
+		sleep(4);
+		 sendMessage($chatId, "esse  baum memo");
+	}
 	//sendMessage($chatId, "emoji ".$emoji." valor ".$valor);	
 }
 
