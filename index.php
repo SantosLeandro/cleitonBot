@@ -171,6 +171,26 @@ if(checkCommand($message, "/biscoito")){
    	reply_msg($chatId, $biscoito." ".$sorte, $id );	 	
 }
 
+if(checkCommand($message, "/ajuda")){
+sendMessage($chatId, "Cleiton rasta fazendo a flesta pra galera
+Comandos inuteis:
+/hi
+Pokemons:
+/felipe /bruno /chico /benedito /sapodemao /astronauta /exudecalda /chance
+/milenedenko /seucuca /editapoupres /lolodede /fantasmadelinguagem
+/bixodepontas /balboa /agamemnom /marinbomdo /ratinho /fleig /carangueijo 
+/assombracao /quelho
+MaxucaReggaero:
+/meloapologia / lavaseusuvaco /nomorelonely /nomorelonely2 /seuperiquito
+Saudacoes:
+Bom dia ou bom dia
+Boa tarde
+Boa noite
+Infelizmente devido a ganancia sem excrupulos do empresariado os comandos a seguir estão off
+/debochometro
+/viadometro ");
+}
+
 if (strpos($message, 'Cleiton, faltam quantos dias pra sale') !== false) {
 	$dias = date('d/m/Y'); 
 	$total = $sale - $dias;
@@ -267,26 +287,6 @@ if(strpos($message, 'correios') !== false)
 
 
 switch($message) {
-	case "/ajuda":
-		sendMessage($chatId, "Cleiton rasta fazendo a flesta pra galera
-Comandos inuteis:
-/hi
-Pokemons:
-/felipe /bruno /chico /benedito /sapodemao /astronauta /exudecalda /chance
-/milenedenko /seucuca /editapoupres /lolodede /fantasmadelinguagem
-/bixodepontas /balboa /agamemnom /marinbomdo /ratinho /fleig /carangueijo 
-/assombracao /quelho
-MaxucaReggaero:
-/meloapologia / lavaseusuvaco /nomorelonely /nomorelonely2 /seuperiquito
-Saudacoes:
-Bom dia ou bom dia
-Boa tarde
-Boa noite
-Infelizmente devido a ganancia sem excrupulos do empresariado os comandos a seguir estão off
-/debochometro
-/viadometro ");
-		
-		break;
 	case "/bitcoin":
 		$moeda = file_get_contents('https://economia.awesomeapi.com.br/json/all');
 		$moeda = json_decode($moeda, TRUE);
