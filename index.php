@@ -59,7 +59,7 @@ if(checkCommand($message, "/entende")){
      $msg = array("cheguei man", $name." é massa","chance","qual a dúvida","ate no rabo","ihh rapaz",
                   "cala boca demonho","satanás caluniador","Sai daquiiii demonho",$name." chegou, façam silencio","dropou",
 		  "derreteu ai men","biticoio derreteu pae","fala pai","e tá errado?!",$name." saudades de vc flor","manda foto de agora",
-		  "de onde saiu esse encosto?!","o mundo ta insano","cloth off","i will throw me in ur pusy","send me you vegana pic","que porra q eu li",
+		  "de onde saiu esse encosto?!","o mundo ta insano","acha q e facil assim vira essa bunda ai toma teu pix","cala boca bixa loca do demonho","toma teu pix demonho","que porra q eu li",
 		 "depois de ter dado o cu esse cara resolveu falar isso");
      sendMessage($chatId, $msg[rand(0, count($msg))]);
  }
