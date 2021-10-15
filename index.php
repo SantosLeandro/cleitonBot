@@ -21,6 +21,16 @@ $sale = date('25/06/2020');
 if($update["message"]["dice"]["emoji"]!=''){
 	$emoji = $update["message"]["dice"]["emoji"];
 	$valor = $update["message"]["dice"]["value"];
+	if($emoji == 🎲){
+		$aposta = rand(1, 6);
+		sendMessage($chatId, "Acho que vai cair ".$aposta);
+		sleep(5);
+		if($valor == $aposta)
+		  sendMessage($chatId, "Num é que eu acertei mesmo");
+		else
+		  sendMessage($chatId, "Errei mais foi de proposito");
+			
+	}
 	if(($emoji == 🏀 or $emoji == ⚽)&& $valor<4){
 		if(rand(0,2)==1)
 		 sendMessage($chatId, "vai errar fdp!");
