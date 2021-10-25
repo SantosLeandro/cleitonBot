@@ -56,10 +56,15 @@ if(checkCommand($message, "/entende")){
 
  if(rand(1, 30)==10){
 	 $name = $update["message"]["from"]["first_name"];
+	 $percentual = rand(0, 100);
      $msg = array("cheguei man", $name." é massa","chance","qual a dúvida","ate no rabo","ihh rapaz",
                   "cala boca demonho","satanás caluniador","Sai daquiiii demonho",$name." chegou, façam silencio","dropou",
 		  "derreteu ai men","biticoio derreteu pae","fala pai","e tá errado?!",$name." saudades de vc flor","manda foto de agora",
-		  "de onde saiu esse encosto?!","o mundo ta insano","acha q e facil assim vira essa bunda ai toma teu pix","cala boca bixa loca do demonho","toma teu pix demonho","que porra q eu li",
+		  "de onde saiu esse encosto?!","o mundo ta insano","poxa ".$name." entortou o meu cacete","bicetinha frita 1 2 3","cringe","humor piadas",
+		  "escuta aqui ".$name." longe de mim fazer fofocas mas...","pelos meus calculos ".$name." está ".$percentual." viado",
+		  "me liga bb estou te esperando", "acho q sou inamoravel","busco sexo",$name." vou te falar uma coisa", "saborearam o meu boga",
+		  "lanso a braba","ta taradao ein ".$name, "bora bota uns traveco no grupo",
+		  "acha q e facil assim vira essa bunda ai toma teu pix","cala boca bixa loca do demonho","toma teu pix demonho","que porra q eu li",
 		 "depois de ter dado o cu esse cara resolveu falar isso");
      sendMessage($chatId, $msg[rand(0, count($msg))]);
  }
