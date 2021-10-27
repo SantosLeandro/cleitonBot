@@ -461,6 +461,9 @@ switch($message) {
 		break;
 		
 	//SEM @ -------------	
+	case "/seyf":
+		sendVideo($chatId, "https://digoboratv.000webhostapp.com/video/novos/seyf.mp4");
+		break;
 	case "/milenedenko":
 		sendVideo($chatId, "https://digoboratv.000webhostapp.com/video/4.mp4");
 		break;
