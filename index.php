@@ -59,7 +59,7 @@ if(checkCommand($message, "/raw")){
 }
 
 if(checkCommand($message, "/adms")){
-  $adms = file_get_contents('https://api.telegram.org/bot'.$botToken.'/getChatAdministrators?chat_id='$chatId);
+  $adms = file_get_contents('https://api.telegram.org/bot'.$botToken.'/getChatAdministrators?chat_id='.$chatId);
   $adms = json_decode($adms);
   $lista = '';
   for($i=0;$i<count($adms['result']);$i++){
