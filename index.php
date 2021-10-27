@@ -63,7 +63,7 @@ if(checkCommand($message, "/adms")){
   $adms = json_decode($adms);
   $lista = '';
   for($i=0;$i<count($adms['result']);$i++){
-   $lista = $lista." "$adms['result'][$i]['user']['first_name']." ";
+   $lista = $lista." ".$adms['result'][$i]['user']['first_name']." ";
   }
   sendMessage($chatId, $lista);
 }
