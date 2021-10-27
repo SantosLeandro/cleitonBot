@@ -58,6 +58,16 @@ if(checkCommand($message, "/raw")){
   sendMessage($chatId, json_encode($update));
 }
 
+if(checkCommand($message, "/adms")){
+  $adms = file_get_contents('https://api.telegram.org/bot'.$botToken.'/getChatAdministrators?chat_id='$chatId);
+  $adms = json_decode($adms);
+  $lista = '';
+  for($i=0;$i<count($adms['result']);$i++){
+   $lista = $lista." "$adms['result'][$i]['user']['first_name']." ";
+  }
+  sendMessage($chatId, $lista);
+}
+
  if(rand(1, 30)==10){
 	 $name = $update["message"]["from"]["first_name"];
 	 $percentual = rand(0, 100);
