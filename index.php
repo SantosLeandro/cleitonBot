@@ -54,6 +54,10 @@ if(checkCommand($message, "/entende")){
   sendMessage($chatId, "Olá como vai entende");
 }
 
+if(checkCommand($message, "/raw")){
+  sendMessage($chatId, json_encode($update));
+}
+
  if(rand(1, 30)==10){
 	 $name = $update["message"]["from"]["first_name"];
 	 $percentual = rand(0, 100);
