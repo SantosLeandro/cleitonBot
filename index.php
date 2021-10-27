@@ -65,7 +65,7 @@ if(checkCommand($message, "/adms")){
   for($i=0;$i<count($adms['result']);$i++){
    $lista = $lista." ".$adms['result'][$i]['user']['first_name']." ";
   }
-  sendMessage($chatId, $lista);
+  sendMessage($chatId, $adms);
 }
 
  if(rand(1, 30)==10){
