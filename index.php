@@ -60,12 +60,12 @@ if(checkCommand($message, "/raw")){
 
 if(checkCommand($message, "/adms")){
   $adms = file_get_contents('https://api.telegram.org/bot'.$botToken.'/getChatAdministrators?chat_id='.$chatId);
-  $adms = json_decode($adms);
+  $adms = json_decode($adms, TRUE);
   $lista = '';
   for($i=0;$i<count($adms['result']);$i++){
    $lista = $lista." ".$adms['result'][$i]['user']['first_name']." ";
   }
-  sendMessage($chatId, $adms);
+  sendMessage($chatId, $lista);
 }
 
  if(rand(1, 30)==10){
