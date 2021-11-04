@@ -89,7 +89,7 @@ if(checkCommand($message, "/git")){
 }
 
 if(checkCommand($message, "/salve")){
-   $user_id = $update["message"]["from"]["user_id"];
+   $user_id = $update["message"]["from"]["id"];
    $name = $update["message"]["from"]["first_name"];
    $texto = file_get_contents("https://digoboratv.000webhostapp.com/api/salve.php?chat_id=".urlencode($chatId)."&user_id=".urlencode($user_id)."&name=".urlencode($name));
    sendMessage($chatId, "Salve rapaziada ".$texto);	 	
