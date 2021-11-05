@@ -71,7 +71,7 @@ if(checkCommand($message, "/importantes")){
 		  "foi gostosinho men" ,
 		  "queria segurar na mão do".$name."enquanto ele come a puta e falar shhhh".$name."vai ficar tudo bem");
   for($i=0;$i<5;$i){
-	$resp += $name[rand(0, count($names))]." disse: ".$frases[rand(0,count($frases)]."\n";  
+	$resp += $name[rand(0, count($names))]." disse: ".$frases[rand(0,count($frases))]."\n";  
   }
   
   sendMessage($chatId,"Aqui vai um resumo\n".$resp);
