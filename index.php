@@ -59,7 +59,7 @@ if(checkCommand($message, "/raw")){
 }
 	
 if(checkCommand($message, "/importantes")){
-	
+	/*
   $names = file_get_contents("https://digoboratv.000webhostapp.com/api/nomes.php?chat_id=".urlencode($chatId));
   $name = rand(0, count($names));
   
@@ -74,7 +74,7 @@ if(checkCommand($message, "/importantes")){
 	$resp += $name[rand(0, count($names))]." disse: ".$frases[rand(0,count($frases))]."\n";  
   }
   
-  sendMessage($chatId,"Aqui vai um resumo\n".$resp);
+  sendMessage($chatId,"Aqui vai um resumo\n".$resp);*/
 }
 
 if(checkCommand($message, "/adms")){
