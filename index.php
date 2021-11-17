@@ -94,8 +94,11 @@ if(checkCommand($message, "/adms")){
                   "cala boca demonho","satanás caluniador","Sai daquiiii demonho",$name." chegou, façam silencio","dropou",
 		  "derreteu ai men","biticoio derreteu pae","fala pai","e tá errado?!",$name." saudades de vc flor","manda foto de agora",
 		  "de onde saiu esse encosto?!","o mundo ta insano","poxa ".$name." entortou o meu cacete","bicetinha frita 1 2 3","cringe","humor piadas",
-		  "escuta aqui ".$name." longe de mim fazer fofocas mas...","pelos meus calculos ".$name." está ".$percentual." viado",
-		  "me liga bb estou te esperando", "acho q sou inamoravel","busco sexo",$name." vou te falar uma coisa", "saborearam o meu boga",
+		  "escuta aqui ".$name." longe de mim fazer fofocas mas...","big xana","acabou o sossego","começou o sossego","safada transou pelada com homem",
+		  "sonho levar uma mordidaça na minha bunda","montar 1 academia","tem algum contato de matekeing","queima rosca",
+		  "e na xoxota", "pelos meus calculos ".$name." está ".$percentual."% viado","Taquei um boia fria numa vala e joguei cimento em cima",
+		  "obg pelo apoio","Calma que eu já estou resolvendo isso",
+		  "avata do cara", "acho q sou inamoravel","busco sexo",$name." vou te falar uma coisa", "saborearam o meu boga",
 		  "lanso a braba","ta taradao ein ".$name, "bora bota uns traveco no grupo",$name." calma só um pouco não eh sobre voce agora o assunto",
 		  "acha q e facil assim vira essa bunda ai toma teu pix","cala boca bixa loca do demonho","toma teu pix demonho","que porra q eu li",
 		 "depois de ter dado o cu esse cara resolveu falar isso");
