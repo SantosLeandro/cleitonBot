@@ -87,7 +87,7 @@ if(checkCommand($message, "/adms")){
   sendMessage($chatId, $lista);
 }
 
- if(rand(1, 30)==10){
+ if(rand(0, 50) == 25){
 	 $name = $update["message"]["from"]["first_name"];
 	 $percentual = rand(0, 100);
      $msg = array("cheguei man", $name." é massa","chance","qual a dúvida","ate no rabo","ihh rapaz",
