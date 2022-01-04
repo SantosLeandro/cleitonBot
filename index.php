@@ -59,22 +59,6 @@ if(checkCommand($message, "/raw")){
 }
 	
 if(checkCommand($message, "/importantes")){
-	/*
-  $names = file_get_contents("https://digoboratv.000webhostapp.com/api/nomes.php?chat_id=".urlencode($chatId));
-  $name = rand(0, count($names));
-  
-  $frases = array("fui cagar tava duro e rasgue o cu",
-		  "O gordão tá de dentadura? ",
-		  "big xana",
-		  "meu pinto ta muito murcho",
-		  "foto profissional né abobado",
-		  "foi gostosinho men" ,
-		  "queria segurar na mão do".$name."enquanto ele come a puta e falar shhhh".$name."vai ficar tudo bem");
-  for($i=0;$i<5;$i){
-	$resp += $name[rand(0, count($names))]." disse: ".$frases[rand(0,count($frases))]."\n";  
-  }
-  
-  sendMessage($chatId,"Aqui vai um resumo\n".$resp);*/
 }
 
 if(checkCommand($message, "/adms")){
