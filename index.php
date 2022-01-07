@@ -62,7 +62,7 @@ if(checkCommand($message, "/entende")){
 
 if(checkCommand($message, "/registrar")){
   $name = $update["message"]["from"]["first_name"];
-  file_get_contents("https://digoboratv.000webhostapp.com/api/importantes.php?nome=".urlencode($name)."&msg=".urlencode($update));
+  file_get_contents("https://digoboratv.000webhostapp.com/api/addImportantes.php?nome=".urlencode($name)."&msg=".urlencode($update));
 }
 
 
