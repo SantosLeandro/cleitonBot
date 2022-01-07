@@ -60,6 +60,12 @@ if(checkCommand($message, "/entende")){
   sendMessage($chatId, "Olá como vai entende");
 }
 
+if(checkCommand($message, "/registrar")){
+  $name = $update["message"]["from"]["first_name"];
+  file_get_contents("https://digoboratv.000webhostapp.com/api/importantes.php?nome=".urlencode($name)."&msg=".urlencode($update));
+}
+
+
 if(checkCommand($message, "/raw")){
   sendMessage($chatId, json_encode($update));
 }
