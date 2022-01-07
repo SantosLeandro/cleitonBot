@@ -59,6 +59,8 @@ if(checkCommand($message, "/raw")){
 }
 	
 if(checkCommand($message, "/importantes")){
+	$importante = file_get_contents("http://digoboratv.000webhostapp.com/api/getImportantes.php");
+	sendMessage($chatId, $importante);
 }
 
 if(checkCommand($message, "/adms")){
