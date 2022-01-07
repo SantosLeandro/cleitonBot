@@ -60,7 +60,7 @@ if(checkCommand($message, "/entende")){
   sendMessage($chatId, "Olá como vai entende");
 }
 
-if($message == "." && $update["message"]["reply_to_message"]["text"] != '')){
+if($message == "." && $update["message"]["reply_to_message"]["text"] != ''){
   $name = $update["message"]["reply_to_message"]["from"]["first_name"];	 
   $msg = $update["message"]["reply_to_message"]["text"];
   file_get_contents("https://digoboratv.000webhostapp.com/api/addImportantes.php?nome=".urlencode($name)."&msg=".urlencode($msg));
