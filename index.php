@@ -60,6 +60,12 @@ if(checkCommand($message, "/entende")){
   sendMessage($chatId, "Olá como vai entende");
 }
 
+if(checkCommand($message, "/viadometro")){
+  $user_id = $update["message"]["from"]["id"];
+  $msg = file_get_contents("https://digoboratv.000webhostapp.com/api/viadometro?chat=".urlencode($chatId)."&user_id=".urlencode($user_id)."&name="..urlencode($name));
+  sendMessage($chatId, $msg);
+}
+
 if($message == "." && $update["message"]["reply_to_message"]["text"] != ''){
   $name = $update["message"]["reply_to_message"]["from"]["first_name"];	 
   $msg = $update["message"]["reply_to_message"]["text"];
