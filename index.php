@@ -233,6 +233,13 @@ if(checkCommand($message, "/beatbox")){
    sendVideo($chatId, "https://digoboratv.000webhostapp.com/video/novos/beatbox.mp4");	 	
 }
 
+if(checkCommand($message, "/aries") || checkCommand($message, "/touro") || checkCommand($message, "/gemeos") || checkCommand($message, "/leao") ||
+   checkCommand($message, "/cancer") || checkCommand($message, "/virgem") || checkCommand($message, "/libra") || checkCommand($message, "/escorpiao") ||
+  checkCommand($message, "/sagitario") || checkCommand($message, "/capricornio") || checkCommand($message, "/aquario") checkCommand($message, "/peixes")){
+   $text = file_get_contents("https://digoboratv.000webhostapp.com/api/getsigno.php?signo=".$message);
+   reply_msg($chatId, $text , $id ); 	 	
+}
+
 if(checkCommand($message, "/biscoito")){
 	$biscoito = genBiscoito();
 	$sorte = genNumSorte();
@@ -254,9 +261,11 @@ Saudacoes:
 Bom dia ou bom dia
 Boa tarde
 Boa noite
+Outros:
+/viadometro 
 Infelizmente devido a ganancia sem excrupulos do empresariado os comandos a seguir estão off
 /debochometro
-/viadometro ");
+");
 }
 
 if (strpos($message, 'Cleiton, faltam quantos dias pra sale') !== false) {
@@ -376,7 +385,7 @@ switch($message) {
 		reply_msg($chatId,"Iene Japonês hoje: ".$moeda["JPY"]["high"], $id );
 		break;
 		
-		
+	/*	
 		//https://horoscopefree.herokuapp.com/daily/pt/
 	case "/aries":
 		$text = file_get_contents("https://digoboratv.000webhostapp.com/api/getsigno.php?signo=aries");
@@ -426,7 +435,7 @@ switch($message) {
 		$text = file_get_contents("https://digoboratv.000webhostapp.com/api/getsigno.php?signo=peixes");
 		reply_msg($chatId, $text, $id );
 		break;
-	
+	*/
 
 	case "/oi":
 		sendMessage($chatId, "Olá");
