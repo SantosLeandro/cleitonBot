@@ -235,7 +235,7 @@ if(checkCommand($message, "/beatbox")){
 
 if(checkCommand($message, "/aries") || checkCommand($message, "/touro") || checkCommand($message, "/gemeos") || checkCommand($message, "/leao") ||
    checkCommand($message, "/cancer") || checkCommand($message, "/virgem") || checkCommand($message, "/libra") || checkCommand($message, "/escorpiao") ||
-  checkCommand($message, "/sagitario") || checkCommand($message, "/capricornio") || checkCommand($message, "/aquario") checkCommand($message, "/peixes")){
+  checkCommand($message, "/sagitario") || checkCommand($message, "/capricornio") || checkCommand($message, "/aquario") || checkCommand($message, "/peixes")){
    $text = file_get_contents("https://digoboratv.000webhostapp.com/api/getsigno.php?signo=".$message);
    reply_msg($chatId, $text , $id ); 	 	
 }
