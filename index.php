@@ -2,6 +2,7 @@
 
 $botToken = $_ENV['TOKEN'];
 $website = "https://api.telegram.org/bot".$botToken;
+$botname = "@cleitonFenixBot";
 
 $update = file_get_contents('php://input');
 $update = json_decode($update, TRUE);
@@ -17,16 +18,102 @@ $id = $update["message"]["message_id"];
 
 $sale = date('25/06/2020');
 
+$numero = rand(0, 15);
+if($numero == 7){
+	$nome_a = $update["message"]["from"]["first_name"];
+	//file_get_contents("https://digoboratv.000webhostapp.com/api/importantes.php?nome=".urlencode($nome_a)."&msg=".urlencode($message));
+}
+
+if($update["message"]["dice"]["emoji"]!=''){
+	$emoji = $update["message"]["dice"]["emoji"];
+	$valor = $update["message"]["dice"]["value"];
+	if($emoji == 🎲){
+		$aposta = rand(1, 6);
+		sendMessage($chatId, "Acho que vai cair ".$aposta);
+		sleep(5);
+		if($valor == $aposta)
+		  sendMessage($chatId, "Num é que eu acertei mesmo");
+		else
+		  sendMessage($chatId, "Errei mais foi de proposito");
+			
+	}
+	if(($emoji == 🏀 or $emoji == ⚽)&& $valor<4){
+		if(rand(0,2)==1)
+		 sendMessage($chatId, "vai errar fdp!");
+		else{
+		 sendMessage($chatId, "valendo o toba se errar já sabe");
+			sleep(4);
+		 sendMessage($chatId, "ih rapaz parece que vc danço");
+		 
+		}
+		 
+	}
+	else if(($emoji == 🏀 or $emoji == ⚽)&& $valor>=4) { 
+		sendMessage($chatId, "eu acho q esse fdp vai acertar!");
+		sleep(4);
+		 sendMessage($chatId, "esse  baum memo");
+	}
+	//sendMessage($chatId, "emoji ".$emoji." valor ".$valor);	
+}
 
 if(checkCommand($message, "/entende")){
   sendMessage($chatId, "Olá como vai entende");
 }
 
- if(rand(1, 30)==10){
+if(checkCommand($message, "/viadometro")){
+  $user_id = $update["message"]["from"]["id"];
+  $name = $update["message"]["from"]["first_name"];;	
+  $msg = file_get_contents("https://digoboratv.000webhostapp.com/api/viadometro.php?chat=".urlencode($chatId)."&user_id=".urlencode($user_id)."&name=".urlencode($name));
+  sendMessage($chatId, $msg);
+}
+
+if($message == "." && $update["message"]["reply_to_message"]["text"] != ''){
+  $name = $update["message"]["reply_to_message"]["from"]["first_name"];	 
+  $msg = $update["message"]["reply_to_message"]["text"];
+  file_get_contents("https://digoboratv.000webhostapp.com/api/addImportantes.php?nome=".urlencode($name)."&msg=".urlencode($msg));
+}
+
+if(checkCommand($message, "/registrar")){
+  $name = $update["message"]["reply_to_message"]["from"]["first_name"];	 
+  $msg = $update["message"]["reply_to_message"]["text"];
+  file_get_contents("https://digoboratv.000webhostapp.com/api/addImportantes.php?nome=".urlencode($name)."&msg=".urlencode($msg));
+}
+
+
+if(checkCommand($message, "/raw")){
+  sendMessage($chatId, json_encode($update));
+}
+	
+if(checkCommand($message, "/importantes")){
+	$importante = file_get_contents("http://digoboratv.000webhostapp.com/api/getImportantes.php");
+	sendMessage($chatId, $importante);
+}
+
+if(checkCommand($message, "/adms")){
+  $adms = file_get_contents('https://api.telegram.org/bot'.$botToken.'/getChatAdministrators?chat_id='.$chatId);
+  $adms = json_decode($adms, TRUE);
+  $lista = '';
+  for($i=0;$i<count($adms['result']);$i++){
+   $lista = $lista." ".$adms['result'][$i]['user']['first_name']." ";
+  }
+  sendMessage($chatId, $lista);
+}
+
+ if(rand(0, 50) == 25){
 	 $name = $update["message"]["from"]["first_name"];
+	 $percentual = rand(0, 100);
      $msg = array("cheguei man", $name." é massa","chance","qual a dúvida","ate no rabo","ihh rapaz",
                   "cala boca demonho","satanás caluniador","Sai daquiiii demonho",$name." chegou, façam silencio","dropou",
-		  "derreteu ai men","biticoio derreteu pae","fala pai","e tá errado?!",$name." saudades de vc flor");
+		  "derreteu ai men","biticoio derreteu pae","fala pai","e tá errado?!",$name." saudades de vc flor","manda foto de agora",
+		  "de onde saiu esse encosto?!","o mundo ta insano","poxa ".$name." entortou o meu cacete","bicetinha frita 1 2 3","cringe","humor piadas",
+		  "escuta aqui ".$name." longe de mim fazer fofocas mas...","big xana","acabou o sossego","começou o sossego","safada transou pelada com homem",
+		  "sonho levar uma mordidaça na minha bunda","montar 1 academia","tem algum contato de matekeing","queima rosca",
+		  "e na xoxota", "pelos meus calculos ".$name." está ".$percentual."% viado","Taquei um boia fria numa vala e joguei cimento em cima",
+		  "obg pelo apoio","Calma que eu já estou resolvendo isso",
+		  "avata do cara", "acho q sou inamoravel","busco sexo",$name." vou te falar uma coisa", "saborearam o meu boga",
+		  "lanso a braba","ta taradao ein ".$name, "bora bota uns veveco no grupo",$name." calma só um pouco não eh sobre voce agora o assunto",
+		  "acha q e facil assim vira essa bunda ai toma teu pix","cala boca bixa loca do demonho","toma teu pix demonho","que porra q eu li",
+		 "depois de ter dado o cu esse cara resolveu falar isso");
      sendMessage($chatId, $msg[rand(0, count($msg))]);
  }
 
@@ -36,7 +123,10 @@ if(checkCommand($message, "/git")){
 }
 
 if(checkCommand($message, "/salve")){
-   sendMessage($chatId, "Salve rapaziada");	 	
+   $user_id = $update["message"]["from"]["id"];
+   $name = $update["message"]["from"]["first_name"];
+   $texto = file_get_contents("https://digoboratv.000webhostapp.com/api/salve.php?chat_id=".urlencode($chatId)."&user_id=".urlencode($user_id)."&name=".urlencode($name));
+   sendMessage($chatId, "Salve rapaziada ".$texto);	 	
 }
 
 if(checkCommand($message, "/urgentadas")){
@@ -143,10 +233,40 @@ if(checkCommand($message, "/beatbox")){
    sendVideo($chatId, "https://digoboratv.000webhostapp.com/video/novos/beatbox.mp4");	 	
 }
 
+if(checkCommand($message, "/aries") || checkCommand($message, "/touro") || checkCommand($message, "/gemeos") || checkCommand($message, "/leao") ||
+   checkCommand($message, "/cancer") || checkCommand($message, "/virgem") || checkCommand($message, "/libra") || checkCommand($message, "/escorpiao") ||
+  checkCommand($message, "/sagitario") || checkCommand($message, "/capricornio") || checkCommand($message, "/aquario") || checkCommand($message, "/peixes")){
+   $signo = ltrim($message, '/');
+   $text = file_get_contents("https://digoboratv.000webhostapp.com/api/getsigno.php?signo=".$signo);
+   reply_msg($chatId, $text , $id ); 	 	
+}
+
 if(checkCommand($message, "/biscoito")){
 	$biscoito = genBiscoito();
 	$sorte = genNumSorte();
    	reply_msg($chatId, $biscoito." ".$sorte, $id );	 	
+}
+
+if(checkCommand($message, "/ajuda")){
+sendMessage($chatId, "Cleiton rasta fazendo a flesta pra galera
+Comandos inuteis:
+/hi
+Pokemons:
+/felipe /bruno /chico /benedito /sapodemao /astronauta /exudecalda /chance
+/milenedenko /seucuca /editapoupres /lolodede /fantasmadelinguagem
+/bixodepontas /balboa /agamemnom /marinbomdo /ratinho /fleig /carangueijo 
+/assombracao /quelho
+MaxucaReggaero:
+/meloapologia / lavaseusuvaco /nomorelonely /nomorelonely2 /seuperiquito
+Saudacoes:
+Bom dia ou bom dia
+Boa tarde
+Boa noite
+Outros:
+/viadometro 
+Infelizmente devido a ganancia sem excrupulos do empresariado os comandos a seguir estão off
+/debochometro
+");
 }
 
 if (strpos($message, 'Cleiton, faltam quantos dias pra sale') !== false) {
@@ -245,26 +365,6 @@ if(strpos($message, 'correios') !== false)
 
 
 switch($message) {
-	case "/ajuda":
-		sendMessage($chatId, "Cleiton rasta fazendo a flesta pra galera
-Comandos inuteis:
-/hi
-Pokemons:
-/felipe /bruno /chico /benedito /sapodemao /astronauta /exudecalda /chance
-/milenedenko /seucuca /editapoupres /lolodede /fantasmadelinguagem
-/bixodepontas /balboa /agamemnom /marinbomdo /ratinho /fleig /carangueijo 
-/assombracao /quelho
-MaxucaReggaero:
-/meloapologia / lavaseusuvaco /nomorelonely /nomorelonely2 /seuperiquito
-Saudacoes:
-Bom dia ou bom dia
-Boa tarde
-Boa noite
-Infelizmente devido a ganancia sem excrupulos do empresariado os comandos a seguir estão off
-/debochometro
-/viadometro ");
-		
-		break;
 	case "/bitcoin":
 		$moeda = file_get_contents('https://economia.awesomeapi.com.br/json/all');
 		$moeda = json_decode($moeda, TRUE);
@@ -286,7 +386,7 @@ Infelizmente devido a ganancia sem excrupulos do empresariado os comandos a segu
 		reply_msg($chatId,"Iene Japonês hoje: ".$moeda["JPY"]["high"], $id );
 		break;
 		
-		
+	/*	
 		//https://horoscopefree.herokuapp.com/daily/pt/
 	case "/aries":
 		$text = file_get_contents("https://digoboratv.000webhostapp.com/api/getsigno.php?signo=aries");
@@ -336,7 +436,7 @@ Infelizmente devido a ganancia sem excrupulos do empresariado os comandos a segu
 		$text = file_get_contents("https://digoboratv.000webhostapp.com/api/getsigno.php?signo=peixes");
 		reply_msg($chatId, $text, $id );
 		break;
-	
+	*/
 
 	case "/oi":
 		sendMessage($chatId, "Olá");
@@ -408,6 +508,12 @@ Infelizmente devido a ganancia sem excrupulos do empresariado os comandos a segu
 		break;
 		
 	//SEM @ -------------	
+	case "/mordecu":
+		sendVideo($chatId, "https://digoboratv.000webhostapp.com/video/novos/mordecu.mp4");
+		break;
+	case "/seyf":
+		sendVideo($chatId, "https://digoboratv.000webhostapp.com/video/novos/seyf.mp4");
+		break;
 	case "/milenedenko":
 		sendVideo($chatId, "https://digoboratv.000webhostapp.com/video/4.mp4");
 		break;

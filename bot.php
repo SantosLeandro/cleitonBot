@@ -2,7 +2,9 @@
 
 
 function checkCommand($message, $comm){
-   if (strcmp(strtolower($message), $comm )==0){ return true; }
+	$m1 = strcmp(strtolower($message), $comm );
+	$m2 = strcmp(strtolower($message), $comm.strtolower($GLOBALS[botname]));
+   if ($m1==0 || $m2==0){ return true; }
     else return false;
 }
 
