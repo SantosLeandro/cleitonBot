@@ -10,28 +10,28 @@ function checkCommand($message, $comm){
 
 
 function sendMessage ($chatId, $message) {	
-	$url = $GLOBALS['website']."/sendMessage?chat_id=".$chatId."&text=".urlencode($message);
+	$url = $GLOBALS['website']."/sendMessage?chat_id=".urlencode($chatId)."&text=".urlencode($message);
 	file_get_contents($url);
 }
 
 function reply_msg($chatId, $message, $id){
-  $url = $GLOBALS['website']."/sendMessage?chat_id=".$chatId."&text=".urlencode($message)."&reply_to_message_id=".$id;
+  $url = $GLOBALS['website']."/sendMessage?chat_id=".urlencode($chatId)."&text=".urlencode($message)."&reply_to_message_id=".$id;
 	file_get_contents($url);	
 }
 
 function sendVideo ($chatId, $message) {
-	$url = $GLOBALS['website']."/sendVideo?chat_id=".$chatId."&video=".$message;
+	$url = $GLOBALS['website']."/sendVideo?chat_id=".urlencode($chatId)."&video=".$message;
 	file_get_contents($url);
 	
 }
 
 function sendAudio ($chatId, $message) {
-	$url = $GLOBALS['website']."/sendAudio?chat_id=".$chatId."&caption=audio&audio=".urlencode($message);
+	$url = $GLOBALS['website']."/sendAudio?chat_id=".urlencode($chatId)."&caption=audio&audio=".urlencode($message);
 	file_get_contents($url);	
 }
 
 function sendImage ($chatId, $message){
-	$url = $GLOBALS['website']."/sendPhoto?chat_id=".$chatId."&photo=".$message;
+	$url = $GLOBALS['website']."/sendPhoto?chat_id=".urlencode($chatId)."&photo=".$message;
 	file_get_contents($url);	
 }
 
