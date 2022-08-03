@@ -102,7 +102,7 @@ if(checkCommand($message, "/adms")){
  if(rand(0, 50) == 25){
 	 $name = $update["message"]["from"]["first_name"];
 	 $percentual = rand(0, 100);
-     $msg = array("acesse nosso forum http://forumdemo.ddns.net", "cheguei man", $name." é massa","chance","qual a dúvida","ate no rabo","ihh rapaz",
+     $msg = array("acesse nosso forum http://forumdigobora.ddns.net", "cheguei man", $name." é massa","chance","qual a dúvida","ate no rabo","ihh rapaz",
                   "cala boca demonho","satanás caluniador","Sai daquiiii demonho",$name." chegou, façam silencio","dropou",
 		  "derreteu ai men","biticoio derreteu pae","fala pai","e tá errado?!",$name." saudades de vc flor","manda foto de agora",
 		  "de onde saiu esse encosto?!","o mundo ta insano","poxa ".$name." entortou o meu cacete","bicetinha frita 1 2 3","cringe","humor piadas",
