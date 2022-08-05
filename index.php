@@ -109,7 +109,7 @@ if(checkCommand($message, "/adms")){
 		  "escuta aqui ".$name." longe de mim fazer fofocas mas...","big xana","acabou o sossego","começou o sossego","safada transou pelada com homem",
 		  "sonho levar uma mordidaça na minha bunda","montar 1 academia","tem algum contato de matekeing","queima rosca",
 		  "e na xoxota", "pelos meus calculos ".$name." está ".$percentual."% viado","Taquei um boia fria numa vala e joguei cimento em cima",
-		  "obg pelo apoio","Calma que eu já estou resolvendo isso","acesse nosso forum http://forumdemo.ddns.net",
+		  "obg pelo apoio","Calma que eu já estou resolvendo isso","acesse nosso forum http://forumdigobora.ddns.net",
 		  "avata do cara", "acho q sou inamoravel","busco sexo",$name." vou te falar uma coisa", "saborearam o meu boga",
 		  "lanso a braba","ta taradao ein ".$name, "bora bota uns veveco no grupo",$name." calma só um pouco não eh sobre voce agora o assunto",
 		  "acha q e facil assim vira essa bunda ai toma teu pix","cala boca bixa loca do demonho","toma teu pix demonho","que porra q eu li",
@@ -744,7 +744,8 @@ function bom_dia($chatId, $name)
 	     3=> "Bom dia, hoje vou pra são gonça visitar o papa ",
 	     4=> "Buenos dias",
 	     5=> "Bom dia, já consultou seu horoscopo hoje ",
-	     6=> "Bom dia, acordou cedo hoje "];
+	     6=> "Bom dia, acordou cedo hoje ",
+	     7=> "Bom dia"];
 	sendMessage($chatId, $frases[rand(0,6)].$name);
 }
 
