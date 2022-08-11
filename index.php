@@ -111,9 +111,10 @@ if(checkCommand($message, "/adms")){
 		  "e na xoxota", "pelos meus calculos ".$name." está ".$percentual."% viado","Taquei um boia fria numa vala e joguei cimento em cima",
 		  "obg pelo apoio","Calma que eu já estou resolvendo isso","acesse nosso forum http://forumdigobora.ddns.net",
 		  "avata do cara", "acho q sou inamoravel","busco sexo",$name." vou te falar uma coisa", "saborearam o meu boga",
-		  "lanso a braba","ta taradao ein ".$name, "bora bota uns veveco no grupo",$name." calma só um pouco não eh sobre voce agora o assunto",
+		  "vem floodar com a gente http://forumdigobora.ddns.net",
+		  "lanso a braba","ta taradao ein ".$name, "ja conhece a iniciativa http://forumdigobora.ddns.net ?!",$name." calma só um pouco não eh sobre voce agora o assunto",
 		  "acha q e facil assim vira essa bunda ai toma teu pix","cala boca bixa loca do demonho","toma teu pix demonho","que porra q eu li",
-		 "depois de ter dado o cu esse cara resolveu falar isso");
+		 "depois de ter dado o cu esse cara resolveu falar isso"," já conhece nosso forum?! http://forumdigobora.ddns.net");
      sendMessage($chatId, $msg[rand(0, count($msg))]);
  }
 
