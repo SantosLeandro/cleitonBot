@@ -17,7 +17,7 @@ $message = $update["message"]["text"];
 $id = $update["message"]["message_id"];
 
 $sale = date('25/06/2020');
-
+/*
 $numero = rand(0, 15);
 if($numero == 7){
 	$nome_a = $update["message"]["from"]["first_name"];
@@ -55,7 +55,7 @@ if($update["message"]["dice"]["emoji"]!=''){
 	}
 	//sendMessage($chatId, "emoji ".$emoji." valor ".$valor);	
 }
-
+*/
 if(checkCommand($message, "/entende")){
   sendMessage($chatId, "Olá como vai entende");
 }
