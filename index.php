@@ -61,6 +61,10 @@ if(checkCommand($message, "/casal")){
   sendMessage($chatId, $texto);
 }
 
+if(checkCommand($message, "/socorro")){
+  sendMessage($chatId, "Vai dar tudo certo");
+}
+
 if(checkCommand($message, "/entende")){
   sendMessage($chatId, "Olá como vai entende");
 }
