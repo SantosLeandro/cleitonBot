@@ -56,6 +56,11 @@ if($update["message"]["dice"]["emoji"]!=''){
 	//sendMessage($chatId, "emoji ".$emoji." valor ".$valor);	
 }
 */
+if(checkCommand($message, "/casal")){
+  $texto = file_get_contents("https://digoboratv.000webhostapp.com/api/casal.php");
+  sendMessage($chatId, $texto);
+}
+
 if(checkCommand($message, "/entende")){
   sendMessage($chatId, "Olá como vai entende");
 }
