@@ -16,6 +16,17 @@ $chatId = $update["message"]["chat"]["id"];
 $message = $update["message"]["text"];
 $id = $update["message"]["message_id"];
 
+function previsao_signo($signo){
+    $source = file_get_contents('https://www.terra.com.br/vida-e-estilo/horoscopo/signos/'.$signo);
+
+    $doc = new DOMDocument;
+    $doc->loadHTML($source);
+
+    $elements = $doc->getElementsByTagName('p');
+
+    return $elements->item(0)->nodeValue;
+}
+
 $sale = date('25/06/2020');
 /*
 $numero = rand(0, 15);
@@ -247,7 +258,8 @@ if(checkCommand($message, "/aries") || checkCommand($message, "/touro") || check
    checkCommand($message, "/cancer") || checkCommand($message, "/virgem") || checkCommand($message, "/libra") || checkCommand($message, "/escorpiao") ||
   checkCommand($message, "/sagitario") || checkCommand($message, "/capricornio") || checkCommand($message, "/aquario") || checkCommand($message, "/peixes")){
    $signo = ltrim($message, '/');
-   $text = file_get_contents("https://digoboratv.000webhostapp.com/api/getsigno.php?signo=".$signo);
+	$text = previsao_signo($signo);
+   //$text = file_get_contents("https://digoboratv.000webhostapp.com/api/getsigno.php?signo=".$signo);
    reply_msg($chatId, $text , $id ); 	 	
 }
 
