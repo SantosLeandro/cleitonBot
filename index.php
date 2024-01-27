@@ -17,12 +17,14 @@ $message = $update["message"]["text"];
 $id = $update["message"]["message_id"];
 
 function previsao_signo($signo){
-    $source = file_get_contents('https://www.terra.com.br/vida-e-estilo/horoscopo/signos/'.$signo);
+    // $source = file_get_contents('https://www.terra.com.br/vida-e-estilo/horoscopo/signos/'.$signo);
 
+    $source = file_get_contents('https://www.personare.com.br/horoscopo-do-dia/'.$signo);
+	
     $doc = new DOMDocument;
     $doc->loadHTML($source);
 
-    $elements = $doc->getElementsByTagName('p');
+    $elements = $doc->getElementsByTagName('p')[3];
 
     return $elements->item(0)->nodeValue;
 }
