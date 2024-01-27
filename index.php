@@ -24,9 +24,9 @@ function previsao_signo($signo){
     $doc = new DOMDocument;
     $doc->loadHTML($source);
 
-    $elements = $doc->getElementsByTagName('p')[3];
+    $elements = $doc->getElementsByTagName('p');
 
-    return $elements->item(0)->nodeValue;
+    return $elements->item(3)->nodeValue;
 }
 
 $sale = date('25/06/2020');
